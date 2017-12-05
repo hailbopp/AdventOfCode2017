@@ -53,6 +53,7 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Base.fs" />
     <Compile Include="Day01\PartOne.fs" />
+    <Compile Include="Day01\PartTwo.fs" />
     <None Include="Script.fsx" />
     <Content Include="packages.config" />
   </ItemGroup>

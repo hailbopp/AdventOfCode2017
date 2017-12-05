@@ -26,10 +26,14 @@ open System
     What is the solution to your captcha?
 *)
 
+let sumEqualPairs pairs =
+    pairs 
+        |> Seq.where (fun t -> t ||> (=))
+        |> Seq.map (fst >> string >> UInt64.Parse)
+        |> Seq.sum
+
 let sumNumericalString (input: string) : uint64 =
     input 
         |> Seq.head |> string |> Seq.append input
         |> Seq.pairwise
-        |> Seq.where (fun t -> t ||> (=))
-        |> Seq.map (fst >> string >> UInt64.Parse)
-        |> Seq.sum
+        |> sumEqualPairs
